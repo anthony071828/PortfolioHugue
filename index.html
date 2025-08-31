@@ -3,28 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, 
-    initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-<div class="blob-outer-container">
-    <div class="blob-inner-container">
-        <div class="blob"></div>
+    
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="cyberbg.mp4" type="video/mp4">
+        </video>
     </div>
-</div>
-      
+
+   
+    <nav class="navbar">
+        <div class="navbar-container"> 
+            <a href="mainlogin.html" class="navbar-logo">Anthony</a>
+            <button class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="navbar-menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <header class="header">
-        <h1>Welcome To My Portfolio</h1>
-        <nav class="nav">
-            <a href="mainlogin.html" class="nav__link">Home</a>
-            <a href="about.html" class="nav__link">About Me</a>
-            <a href="projects.html" class="nav__link">Projects</a>
-            <a href="contact.html" class="nav__link">Contact</a>
-        </nav>
+        <div class="wrapper">
+            <span class="typing-text">Welcome to My Portfolio</span>
+        </div>
     </header>
 
+  
+
+
+
+  
     <section class="section">
         <div class="Home-img">
             <img src="images/homeimg.png" alt="">
@@ -32,9 +52,9 @@
         <h1 class="section__title">Hello, I'm Anthony</h1>
         <p class="section__paragraph">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
-             Laudantium rem odio autem! Animi eveniet eius quibusdam harum 
-             quis! Blanditiis adipisci voluptatum labore nam, corporis molestias
-             sapiente numquam quod nihil tenetur.
+            Laudantium rem odio autem! Animi eveniet eius quibusdam harum 
+            quis! Blanditiis adipisci voluptatum labore nam, corporis molestias
+            sapiente numquam quod nihil tenetur.
         </p>
         <p class="section__paragraph">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
@@ -50,7 +70,7 @@
             rerum illum qui debitis labore. Molestiae architecto 
             quisquam harum!
         </p>
-         <p class="section__paragraph">
+        <p class="section__paragraph">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
             Enim quo sequi dolorum ipsum perferendis tempora, 
             odit doloremque voluptatibus itaque optio reiciendis 
@@ -58,6 +78,7 @@
             quisquam harum!
         </p>
     </section>
+
     <script src="brain.js"></script>
 </body>
 </html>
