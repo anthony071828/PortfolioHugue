@@ -163,7 +163,6 @@ body {
   z-index: 0;
 }
 
-
 .video-background::after {
   content: "";
   position: absolute;
@@ -227,6 +226,11 @@ body {
 }
 
 @media (max-width: 480px) {
+
+  .typing-text {
+    font-size: clamp(1rem, 8vw, 2rem);
+  }
+
   .navbar-container {
     padding: 0 1rem; 
   }
@@ -238,6 +242,8 @@ body {
   .navbar-container .navbar-menu li a {
    font-size: 1.2rem;
    padding: 3px 15px;
+   
+   
   }
   
 }
@@ -252,7 +258,7 @@ body {
 .typing-text {
   font-family: monospace; 
   color: white;
-  font-size: 60px;
+  font-size: clamp(1.5rem, 6vw, 3.5rem);
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
