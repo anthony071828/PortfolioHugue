@@ -1,32 +1,43 @@
-document.querySelectorAll("a.nav-link").forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const target = document.querySelector(link.getAttribute("href"));
-    target.scrollIntoView({ behavior: "smooth" });
+const paragraphs = document.querySelectorAll(".section__paragraph");
+
+document.addEventListener("scroll", function () {
+  paragraphs.forEach((paragraph) => {
+    if (isInView(paragraph)) {
+      paragraph.classList.add("section__paragraph--visible");
+    } else {
+      paragraph.classList.remove("section__paragraph--visible"); // reset
+    }
   });
 });
 
-const contactForm = document.getElementById("contactForm");
-const contactMessage = document.getElementById("contactMessage");
 
-contactForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-  fetch(contactForm.action, {
-    method: "POST",
-    body: new FormData(contactForm),
-    headers: { Accept: "application/json" },
-  }).then((response) => {
-    if (response.ok) {
-      contactMessage.style.display = "block";
-      contactMessage.textContent = "Message sent! Thank you.";
-      contactMessage.classList.remove("text-danger");
-      contactMessage.classList.add("text-success");
-      contactForm.reset();
-    } else {
-      contactMessage.style.display = "block";
-      contactMessage.textContent = "Oops! Something went wrong.";
-      contactMessage.classList.remove("text-success");
-      contactMessage.classList.add("text-danger");
-    }
-  });
+function isInView(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.bottom > 0 &&
+    rect.top <
+      (window.innerHeight - 150 || document.documentElement.clientHeight - 150)
+  );
+}
+
+
+let lastScroll = 0;
+const navbar = document.querySelector(".nav");
+
+window.addEventListener("scroll", () => {
+  const currentScroll =
+    window.pageYOffset || document.documentElement.scrollTop;
+
+  if (currentScroll > lastScroll) {
+
+    navbar.style.transition = "top 0.3s ease, opacity 0.3s ease";
+    navbar.style.top = "-100px"; 
+    navbar.style.opacity = "0";
+  } else {
+   
+    navbar.style.top = "0";
+    navbar.style.opacity = "1";
+  }
+
+  lastScroll = currentScroll <= 0 ? 0 : currentScroll; 
 });
